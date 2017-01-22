@@ -1,0 +1,8 @@
+E:\ASRSV3\ASRS_V3\S_WCS\bin\Release\S_WCS.exe.config
+E:\ASRSV3\ASRS_V3\S_WCS\bin\Release\S_WCS.exe
+E:\ASRSV3\ASRS_V3\S_WCS\bin\Release\S_WCS.pdb
+E:\ASRSV3\ASRS_V3\S_WCS\obj\Release\S_WCS.FormS_WCS.resources
+E:\ASRSV3\ASRS_V3\S_WCS\obj\Release\S_WCS.Properties.Resources.resources
+E:\ASRSV3\ASRS_V3\S_WCS\obj\Release\S_WCS.csproj.GenerateResource.Cache
+E:\ASRSV3\ASRS_V3\S_WCS\obj\Release\S_WCS.exe
+E:\ASRSV3\ASRS_V3\S_WCS\obj\Release\S_WCS.pdb

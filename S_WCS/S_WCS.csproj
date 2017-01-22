@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9244D008-B3FB-456F-9834-574C5B5407EF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>S_WCS</RootNamespace>
+    <AssemblyName>S_WCS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>CHUKU.ICO</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonMethod.cs" />
+    <Compile Include="FormS_WCS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormS_WCS.Designer.cs">
+      <DependentUpon>FormS_WCS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_OdLst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_OdLst.Designer.cs">
+      <DependentUpon>Frm_OdLst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceForVolvo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Stacker.cs" />
+    <EmbeddedResource Include="FormS_WCS.resx">
+      <DependentUpon>FormS_WCS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_OdLst.resx">
+      <DependentUpon>Frm_OdLst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\ServiceForVolvo\ASRS_Service.wsdl" />
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.ArrayOfAnyType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.CommonMethod_BackUpDBResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.CommonMethod_StringDecodingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.CommonMethod_StringEncodingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Container_Vs_Items_DeleteOneByCI_IDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Container_Vs_Items_DeleteOneByContainerIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Container_Vs_Items_GetAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Container_Vs_Items_GetItemsByContainerIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Container_Vs_Items_InsertOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Container_Vs_Items_UpdateOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Device_Alert.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Device_Alert_DeleteOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Device_Alert_GetAllByAlertIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Device_Alert_GetAllByDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Device_Alert_GetLastAlarmResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Device_Alert_GetUnReadAlarmsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Device_Alert_InsertOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Device_Alert_UpdateOneFlagByAlarmIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Device_Alert_UpdateOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.DU_Device.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.DU_Device_GetOneByDeviceIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.DU_Device_InsertOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.DU_Device_UpdateOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Container.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Container_DeleteOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Container_GetAllByKeyWordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Container_GetAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Container_GetOneByContainerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Container_GetUnBindingedContainerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Container_InsertOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Container_UpdateOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Item.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Item_DeleteOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Item_GetAllByContainerIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Item_GetAllByKeyWordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Item_GetAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Item_GetOneBySkuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Item_InsertOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IM_Item_UpdateOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IV_container_vs_item.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.IV_place_vs_container.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.MODULE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.MODULE_DeleteOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.MODULE_GetAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.MODULE_InsertOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.MODULE_UpdateOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.MODULE_VS_GROUP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.MODULE_VS_GROUP_DeleteOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.MODULE_VS_GROUP_GetAllByGroupNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.MODULE_VS_GROUP_InsertOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.MODULE_VS_GROUP_UpdateOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.OD_Task.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Od_Task_deleteOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Od_Task_GetCurrentTaskByDeviceIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Od_Task_GetLastTaskByDeviceIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Od_Task_GetNotFinishedTask_by_deviceIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Od_Task_InsertOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Od_Task_SetLastTaskVoidByDeviceIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Od_Task_UpdateOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.OPC_ReadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.OPC_WritePointResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.OPC_WriteSerialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Place_Vs_Container_DeleteOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Place_Vs_Container_GetAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Place_Vs_Container_GetEmptyContainerInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Place_Vs_Container_GetRelationshipByContainerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Place_Vs_Container_GetStoredInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Place_Vs_Container_InsertOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Place_Vs_Container_UpdateOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PL_Place.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PL_PLACE_CheckPlaceEmptyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PL_PLACE_DeleteOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PL_PLACE_FiltLocationByRowColumnLayerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PL_PLACE_GetAllbyLayerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PL_PLACE_GetAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PL_PLACE_GetByAreaStrLocationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PL_PLACE_GetEmptyPlaceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PL_PLACE_GetInputLocationByContainerBindResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PL_PLACE_GetLockedPlaceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PL_PLACE_GetPlaceByBindingContainerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PL_PLACE_GetPlaceInfoByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PL_PLACE_InsertNewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PL_PLACE_UpdateHadTaskDoingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PL_PLACE_UpdateNewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PW_GROUP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PW_Group_DeleteOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PW_Group_GetAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PW_Group_InsertOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PW_Group_UpadteOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PW_User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PW_User_DeleteUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PW_User_GetAllByUserGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PW_User_GetAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PW_User_GetOneByUserIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PW_User_GetUserInfoByEmpnoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PW_User_InsertOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.PW_User_UpdateUserInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Query_Stored.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.Query_Stored_GetAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.V_INOUTSTOCK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\S_WCS.ServiceForVolvo.V_INOUTSTOCK_SelectByDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CHUKU.ICO" />
+    <None Include="Service References\ServiceForVolvo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceForVolvo\configuration.svcinfo" />
+    <None Include="Service References\ServiceForVolvo\configuration91.svcinfo" />
+    <None Include="Service References\ServiceForVolvo\ASRS_Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceForVolvo\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,16 @@
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\bin\WebServiceForASRS.dll
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\bin\WebServiceForASRS.XmlSerializers.dll
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\bin\WebServiceForASRS.pdb
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\bin\DBEntity.dll
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\bin\Excel.dll
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\bin\log4net.dll
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\bin\Oracle.DataAccess.dll
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\bin\System.Data.SQLite.dll
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\bin\office.dll
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\bin\Microsoft.Vbe.Interop.dll
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\bin\DBEntity.pdb
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\bin\System.Data.SQLite.pdb
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\obj\Release\WebServiceForASRS.csprojResolveAssemblyReference.cache
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\obj\Release\WebServiceForASRS.dll
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\obj\Release\WebServiceForASRS.pdb
+E:\ASRSV3\ASRS_V3\WebServiceForASRS\obj\Release\WebServiceForASRS.XmlSerializers.dll

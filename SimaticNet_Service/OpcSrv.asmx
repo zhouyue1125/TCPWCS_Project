@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="OpcSrv.asmx.cs" Class="SimaticNet_Service.Service1" %>

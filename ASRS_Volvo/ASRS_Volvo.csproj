@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A033E43D-30DA-45F8-836C-A6C804BDC368}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ASRS_Volvo</RootNamespace>
+    <AssemblyName>ASRS_Volvo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\SugonMes\Project1\MES_UI_WCS\bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WHC.OrderWater.Commons, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\DLL_Collection\WHC.OrderWater.Commons\WHC.OrderWater.Commons.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonMethod.cs" />
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceForVolvo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UIFolder\BasisSetting\FormAddGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIFolder\BasisSetting\FormAddGroup.Designer.cs">
+      <DependentUpon>FormAddGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIFolder\BasisSetting\FormEditPeopleInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIFolder\BasisSetting\FormEditPeopleInfo.Designer.cs">
+      <DependentUpon>FormEditPeopleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIFolder\BasisSetting\FormEmpSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIFolder\BasisSetting\FormEmpSetting.Designer.cs">
+      <DependentUpon>FormEmpSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIFolder\BasisSetting\FormPlaceMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIFolder\BasisSetting\FormPlaceMain.Designer.cs">
+      <DependentUpon>FormPlaceMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIFolder\Items\FormAddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIFolder\Items\FormAddItem.Designer.cs">
+      <DependentUpon>FormAddItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIFolder\Items\FormItemsMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIFolder\Items\FormItemsMain.Designer.cs">
+      <DependentUpon>FormItemsMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIFolder\Query\FormAlertQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIFolder\Query\FormAlertQuery.Designer.cs">
+      <DependentUpon>FormAlertQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIFolder\Query\FormDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIFolder\Query\FormDevice.Designer.cs">
+      <DependentUpon>FormDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIFolder\Query\FormInOutStockRecorder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIFolder\Query\FormInOutStockRecorder.Designer.cs">
+      <DependentUpon>FormInOutStockRecorder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIFolder\WorkCenter\FormUnLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIFolder\WorkCenter\FormUnLoading.Designer.cs">
+      <DependentUpon>FormUnLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIFolder\WorkCenter\FrmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIFolder\WorkCenter\FrmLoading.Designer.cs">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIFolder\WorkCenter\FrmOdLst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIFolder\WorkCenter\FrmOdLst.Designer.cs">
+      <DependentUpon>FrmOdLst.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UIFolder\BasisSetting\FormAddGroup.resx">
+      <DependentUpon>FormAddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIFolder\BasisSetting\FormEditPeopleInfo.resx">
+      <DependentUpon>FormEditPeopleInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIFolder\BasisSetting\FormEmpSetting.resx">
+      <DependentUpon>FormEmpSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIFolder\BasisSetting\FormPlaceMain.resx">
+      <DependentUpon>FormPlaceMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIFolder\Items\FormAddItem.resx">
+      <DependentUpon>FormAddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIFolder\Items\FormItemsMain.resx">
+      <DependentUpon>FormItemsMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIFolder\Query\FormAlertQuery.resx">
+      <DependentUpon>FormAlertQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIFolder\Query\FormDevice.resx">
+      <DependentUpon>FormDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIFolder\Query\FormInOutStockRecorder.resx">
+      <DependentUpon>FormInOutStockRecorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIFolder\WorkCenter\FormUnLoading.resx">
+      <DependentUpon>FormUnLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIFolder\WorkCenter\FrmLoading.resx">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIFolder\WorkCenter\FrmOdLst.resx">
+      <DependentUpon>FrmOdLst.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceForVolvo\ASRS_Service.wsdl" />
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.ArrayOfAnyType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.Device_Alert.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.DU_Device.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.IM_Container.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.IM_Item.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.IV_container_vs_item.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.IV_place_vs_container.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.MODULE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.MODULE_VS_GROUP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.OD_Task.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.PL_Place.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.PW_GROUP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.PW_User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.Query_Stored.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Volvo.ServiceForVolvo.V_INOUTSTOCK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceForVolvo\configuration91.svcinfo" />
+    <None Include="Service References\ServiceForVolvo\configuration.svcinfo" />
+    <None Include="Service References\ServiceForVolvo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceForVolvo\ASRS_Service.disco" />
+    <Content Include="Volvo_logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceForVolvo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WCS_V3\WCS_V3.csproj">
+      <Project>{cfb66f60-55de-4d2c-ba68-3be955d4bebe}</Project>
+      <Name>WCS_V3</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

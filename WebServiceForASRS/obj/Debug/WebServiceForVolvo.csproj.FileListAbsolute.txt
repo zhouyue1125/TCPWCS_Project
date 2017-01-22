@@ -1,0 +1,9 @@
+E:\ZxPr\asrsforvolvo\WebServiceForASRS\bin\WebServiceForASRS.dll
+E:\ZxPr\asrsforvolvo\WebServiceForASRS\bin\WebServiceForASRS.pdb
+E:\ZxPr\asrsforvolvo\WebServiceForASRS\bin\DBEntity.dll
+E:\ZxPr\asrsforvolvo\WebServiceForASRS\bin\office.dll
+E:\ZxPr\asrsforvolvo\WebServiceForASRS\bin\Microsoft.Vbe.Interop.dll
+E:\ZxPr\asrsforvolvo\WebServiceForASRS\bin\DBEntity.pdb
+E:\ZxPr\asrsforvolvo\WebServiceForASRS\obj\Debug\WebServiceForVolvo.csprojResolveAssemblyReference.cache
+E:\ZxPr\asrsforvolvo\WebServiceForASRS\obj\Debug\WebServiceForASRS.dll
+E:\ZxPr\asrsforvolvo\WebServiceForASRS\obj\Debug\WebServiceForASRS.pdb

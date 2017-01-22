@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="ASRS_Service.asmx.cs" Class="WebServiceForASRS.ASRS_Service" %>

@@ -1,0 +1,4097 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CommonMethod_GetServerTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="CommonMethod_GetServerTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CommonMethod_GetServerTimeResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommonMethod_BackUpDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommonMethod_BackUpDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CommonMethod_BackUpDBResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommonMethod_StringEncoding">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommonMethod_StringEncodingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommonMethod_StringEncodingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommonMethod_StringDecoding">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommonMethod_StringDecodingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommonMethod_StringDecodingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_User_GetUserInfoByEmpno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_User_GetUserInfoByEmpnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PW_User_GetUserInfoByEmpnoResult" type="tns:PW_User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PW_User">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="USERNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PASSWORD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="USERGROUP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEPARTMENT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UPDATETIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PASSWORDUPDATETIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PASSWORDEXPIRETIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LASTLOGINTIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ISLOGININ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HANDSHAKE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PW_BACKUP1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PW_BACKUP2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PW_BACKUP3" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PW_User_UpdateUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="tns:PW_User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_User_UpdateUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PW_User_UpdateUserInfoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_User_DeleteUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_User_DeleteUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PW_User_DeleteUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_User_DeleteUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserIds" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_User_DeleteUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PW_User_DeleteUsersResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_User_GetAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="PW_User_GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PW_User_GetAllResult" type="tns:ArrayOfPW_User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPW_User">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PW_User" nillable="true" type="tns:PW_User" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="JsonPW_User_GetAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="JsonPW_User_GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JsonPW_User_GetAllResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_User_InsertOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="t_new" type="tns:PW_User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_User_InsertOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PW_User_InsertOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_User_GetOneByUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="USERID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_User_GetOneByUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PW_User_GetOneByUserIDResult" type="tns:PW_User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_User_GetAllByUserGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="USERGroup" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_User_GetAllByUserGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PW_User_GetAllByUserGroupResult" type="tns:ArrayOfPW_User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_Group_GetAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="PW_Group_GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PW_Group_GetAllResult" type="tns:ArrayOfPW_GROUP" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPW_GROUP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PW_GROUP" nillable="true" type="tns:PW_GROUP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PW_GROUP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GROUPNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GROUPDESCRIBE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STATUS" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PW_Group_DeleteOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="groupId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_Group_DeleteOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PW_Group_DeleteOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_Group_InsertOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="t_One" type="tns:PW_GROUP" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_Group_InsertOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PW_Group_InsertOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_Group_UpadteOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="t_One" type="tns:PW_GROUP" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PW_Group_UpadteOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PW_Group_UpadteOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MODULE_GetAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="MODULE_GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MODULE_GetAllResult" type="tns:ArrayOfMODULE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMODULE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MODULE" nillable="true" type="tns:MODULE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MODULE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MODULE_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MODULE_DESCRIBE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TAGNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STATUS" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MODULE_InsertOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="t_one" type="tns:MODULE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MODULE_InsertOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MODULE_InsertOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MODULE_UpdateOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="t_one" type="tns:MODULE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MODULE_UpdateOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MODULE_UpdateOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MODULE_DeleteOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PW_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MODULE_DeleteOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MODULE_DeleteOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MODULE_VS_GROUP_GetAllByGroupName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MODULE_VS_GROUP_GetAllByGroupNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MODULE_VS_GROUP_GetAllByGroupNameResult" type="tns:ArrayOfMODULE_VS_GROUP" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMODULE_VS_GROUP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MODULE_VS_GROUP" nillable="true" type="tns:MODULE_VS_GROUP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MODULE_VS_GROUP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GROUP_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GROUP_DESC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MODULE_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MODULE_NAME" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MODULE_VS_GROUP_InsertOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="one" type="tns:MODULE_VS_GROUP" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MODULE_VS_GROUP_InsertOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MODULE_VS_GROUP_InsertOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MODULE_VS_GROUP_UpdateOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="one" type="tns:MODULE_VS_GROUP" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MODULE_VS_GROUP_UpdateOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MODULE_VS_GROUP_UpdateOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MODULE_VS_GROUP_DeleteOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MODULE_VS_GROUP_DeleteOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MODULE_VS_GROUP_DeleteOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Item_GetAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="IM_Item_GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IM_Item_GetAllResult" type="tns:ArrayOfIM_Item" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfIM_Item">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IM_Item" nillable="true" type="tns:IM_Item" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IM_Item">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SKU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SKUDESC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BARCODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EANCODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMPATIBLECODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SPEC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITEMCLASS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ABCCLASS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UOM" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LENGTH" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WIDTH" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HEIGHT" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WEIGHT" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SAVEQTY" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="STORGELIFE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VOID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UPDATETIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UPDATEUSER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITEM_BK1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITEM_BK2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITEM_BK3" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IM_Item_InsertOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="t_new" type="tns:IM_Item" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Item_InsertOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IM_Item_InsertOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Item_UpdateOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="t_new" type="tns:IM_Item" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Item_UpdateOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IM_Item_UpdateOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Item_DeleteOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sku" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Item_DeleteOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IM_Item_DeleteOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Item_GetAllByContainerID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="containerId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Item_GetAllByContainerIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IM_Item_GetAllByContainerIDResult" type="tns:ArrayOfIM_Item" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Item_GetOneBySku">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sku" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Item_GetOneBySkuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IM_Item_GetOneBySkuResult" type="tns:IM_Item" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Item_GetAllByKeyWord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KeyWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Item_GetAllByKeyWordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IM_Item_GetAllByKeyWordResult" type="tns:ArrayOfIM_Item" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Container_GetAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="IM_Container_GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IM_Container_GetAllResult" type="tns:ArrayOfIM_Container" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfIM_Container">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IM_Container" nillable="true" type="tns:IM_Container" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IM_Container">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CONTAINERID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CONTAINERDESC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CONTAINERTYPE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LENGTH" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WIDTH" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HEIGHT" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MAXWEIGHT" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="VOID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STATUS" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="WAREHOUSENO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ONLINEMODEL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UPDATETIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UPDATEUSER" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IM_Container_GetUnBindingedContainer">
+        <s:complexType />
+      </s:element>
+      <s:element name="IM_Container_GetUnBindingedContainerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IM_Container_GetUnBindingedContainerResult" type="tns:ArrayOfIM_Container" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Container_InsertOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="t_new" type="tns:IM_Container" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Container_InsertOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IM_Container_InsertOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Container_UpdateOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="t_new" type="tns:IM_Container" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Container_UpdateOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IM_Container_UpdateOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Container_DeleteOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContainerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Container_DeleteOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IM_Container_DeleteOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Container_GetOneByContainerId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContainerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Container_GetOneByContainerIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IM_Container_GetOneByContainerIdResult" type="tns:IM_Container" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Container_GetAllByKeyWord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KeyWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IM_Container_GetAllByKeyWordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IM_Container_GetAllByKeyWordResult" type="tns:ArrayOfIM_Container" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_GetAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="PL_PLACE_GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PL_PLACE_GetAllResult" type="tns:ArrayOfPL_Place" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPL_Place">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PL_Place" nillable="true" type="tns:PL_Place" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PL_Place">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PLACEID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PLACENODEID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PLACETYPE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PLACEAREA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ROWNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COLUMNNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LAYERNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEEPCELLNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AISLE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LINE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AISLESIDE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ISLOCK" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ISFULL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HASTASKDOING" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WAREHOUSENO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="POSITIONNO_FOR_SRM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="X" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Y" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Z" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LENGTH" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WIDTH" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HEIGHT" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MAXWEIGHT" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="HEIGHTLEVEL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PRIORITY" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AREA_LOGIC" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PL_PLACE_GetFreeByHighNO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HighNO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_GetFreeByHighNOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PL_PLACE_GetFreeByHighNOResult" type="tns:ArrayOfPL_Place" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_InsertNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="t_new" type="tns:PL_Place" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_InsertNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PL_PLACE_InsertNewResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_UpdateNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="t_new" type="tns:PL_Place" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_UpdateNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PL_PLACE_UpdateNewResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_DeleteOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_DeleteOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PL_PLACE_DeleteOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_GetPlaceInfoByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_GetPlaceInfoByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PL_PLACE_GetPlaceInfoByIDResult" type="tns:ArrayOfPL_Place" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_GetInputLocationByContainerBind">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BindContainerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_GetInputLocationByContainerBindResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PL_PLACE_GetInputLocationByContainerBindResult" type="tns:ArrayOfPL_Place" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_GetByAreaStrLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogicArae" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_GetByAreaStrLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PL_PLACE_GetByAreaStrLocationResult" type="tns:ArrayOfPL_Place" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_FiltLocationByRowColumnLayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="row" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="col" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="layer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_FiltLocationByRowColumnLayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PL_PLACE_FiltLocationByRowColumnLayerResult" type="tns:ArrayOfPL_Place" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_CheckPlaceEmpty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placeID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_CheckPlaceEmptyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PL_PLACE_CheckPlaceEmptyResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_UpdateHadTaskDoing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OneOrZero" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_UpdateHadTaskDoingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PL_PLACE_UpdateHadTaskDoingResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_GetEmptyPlace">
+        <s:complexType />
+      </s:element>
+      <s:element name="PL_PLACE_GetEmptyPlaceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PL_PLACE_GetEmptyPlaceResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PL_PLACE_GetLockedPlace">
+        <s:complexType />
+      </s:element>
+      <s:element name="PL_PLACE_GetLockedPlaceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PL_PLACE_GetLockedPlaceResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_GetPlaceByBindingContainer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="containerid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_GetPlaceByBindingContainerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PL_PLACE_GetPlaceByBindingContainerResult" type="tns:PL_Place" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_GetAllbyLayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="layer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PL_PLACE_GetAllbyLayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PL_PLACE_GetAllbyLayerResult" type="tns:ArrayOfPL_Place" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Device_Alert_GetAllByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="start" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Device_Alert_GetAllByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Device_Alert_GetAllByDateResult" type="tns:ArrayOfDevice_Alert" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDevice_Alert">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Device_Alert" nillable="true" type="tns:Device_Alert" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Device_Alert">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEVICEID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ALERTID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ALERTNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CREATETIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FINISH_TIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIME_OF_DURATION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SYSTEMFLAG" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Device_Alert_GetAllByAlertId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="alertId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Device_Alert_GetAllByAlertIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Device_Alert_GetAllByAlertIdResult" type="tns:Device_Alert" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Device_Alert_InsertOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="t_new" type="tns:Device_Alert" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Device_Alert_InsertOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Device_Alert_InsertOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Device_Alert_UpdateOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="t_new" type="tns:Device_Alert" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Device_Alert_UpdateOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Device_Alert_UpdateOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Device_Alert_DeleteOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Device_Alert_DeleteOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Device_Alert_DeleteOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Device_Alert_UpdateOneFlagByAlarmId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="alarmId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="flag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Device_Alert_UpdateOneFlagByAlarmIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Device_Alert_UpdateOneFlagByAlarmIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Device_Alert_GetUnReadAlarms">
+        <s:complexType />
+      </s:element>
+      <s:element name="Device_Alert_GetUnReadAlarmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Device_Alert_GetUnReadAlarmsResult" type="tns:ArrayOfDevice_Alert" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Device_Alert_GetLastAlarm">
+        <s:complexType />
+      </s:element>
+      <s:element name="Device_Alert_GetLastAlarmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Device_Alert_GetLastAlarmResult" type="tns:Device_Alert" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Place_Vs_Container_GetStoredInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="Place_Vs_Container_GetStoredInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Place_Vs_Container_GetStoredInfoResult" type="tns:ArrayOfIV_place_vs_container" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfIV_place_vs_container">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IV_place_vs_container" nillable="true" type="tns:IV_place_vs_container" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IV_place_vs_container">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WAREHOUSENO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PLACEID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CONTAINERID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UPDATETIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UPDATEUSER" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VOID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ISEMPTYCONTAINER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ISEMPTYPLACE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PVC_BACKUP1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PVC_BACKUP2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PVC_BACKUP3" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Place_Vs_Container_GetEmptyContainerInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="Place_Vs_Container_GetEmptyContainerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Place_Vs_Container_GetEmptyContainerInfoResult" type="tns:ArrayOfIV_place_vs_container" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Place_Vs_Container_GetRelationshipByContainer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContainerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Place_Vs_Container_GetRelationshipByContainerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Place_Vs_Container_GetRelationshipByContainerResult" type="tns:ArrayOfIV_place_vs_container" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Place_Vs_Container_GetAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="Place_Vs_Container_GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Place_Vs_Container_GetAllResult" type="tns:ArrayOfIV_place_vs_container" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Place_Vs_Container_UpdateOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="one" type="tns:IV_place_vs_container" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Place_Vs_Container_UpdateOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Place_Vs_Container_UpdateOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Place_Vs_Container_InsertOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="one" type="tns:IV_place_vs_container" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Place_Vs_Container_InsertOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Place_Vs_Container_InsertOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Place_Vs_Container_DeleteOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="containerId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Place_Vs_Container_DeleteOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Place_Vs_Container_DeleteOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OPC_Read">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ItemNames" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OPC_ReadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OPC_ReadResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OPC_WritePoint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OPC_WritePointResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OPC_WritePointResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSJ_Licences">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ssj_Number" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSJ_LicencesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SSJ_LicencesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OPC_WriteSerial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ItemNames" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="values" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OPC_WriteSerialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OPC_WriteSerialResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DU_Device_GetOneByDeviceId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeviceId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DU_Device">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DEVICEID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEVICENODEID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEVICESERVICEID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEVICENAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEVICETYPE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VOID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="WAREHOUSENO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AISLE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LINE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SERVERIPADDRESS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SERVERPORTNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IPADDRESS" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PORTNO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SOCKETTYPE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LOCALIPADDRESS" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LOCALPORTNO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="REMOTEIPADDRESS" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="REMOTEPORTNO" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ISONLINE" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="WORKINGSTATUS" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DU_Device_GetOneByDeviceIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DU_Device_GetOneByDeviceIdResult" type="tns:DU_Device" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DU_Device_InsertOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newOne" type="tns:DU_Device" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DU_Device_InsertOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DU_Device_InsertOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DU_Device_UpdateOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newOne" type="tns:DU_Device" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DU_Device_UpdateOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DU_Device_UpdateOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Od_Task_InsertOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="one" type="tns:OD_Task" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OD_Task">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TASKID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASKNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DODEVICEID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DODEVICENODEID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DODEVICETYPE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASKTYPE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASKLEVEL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASKSTATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASKCONTENTSTRING" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASKTYPEDESCRIPTION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CONTAINERNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SOURCEPLACE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TOPLACE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ORDERDETAILSID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ORDERHEADID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SENDTIMES" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RELEASESTATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HADFINISH" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VOID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UPDATETIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UPDATEUSER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WAREHOUSENO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ISCURRENTTASK" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="INPUTLOCATIONLEVEL" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ISLASTTASK" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ISEMPTYCONTAINER" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Od_Task_InsertOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Od_Task_InsertOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Od_Task_UpdateOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="one" type="tns:OD_Task" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Od_Task_UpdateOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Od_Task_UpdateOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Od_Task_deleteOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TaskID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Od_Task_deleteOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Od_Task_deleteOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Od_Task_GetNotFinishedTask_by_deviceID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Device_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOD_Task">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OD_Task" nillable="true" type="tns:OD_Task" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Od_Task_GetNotFinishedTask_by_deviceIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Od_Task_GetNotFinishedTask_by_deviceIDResult" type="tns:ArrayOfOD_Task" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Od_Task_GetLastTaskByDeviceID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Device_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Od_Task_GetLastTaskByDeviceIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Od_Task_GetLastTaskByDeviceIDResult" type="tns:OD_Task" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Od_Task_GetCurrentTaskByDeviceID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Device_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Od_Task_GetCurrentTaskByDeviceIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Od_Task_GetCurrentTaskByDeviceIDResult" type="tns:OD_Task" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Od_Task_SetLastTaskVoidByDeviceID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Od_Task_SetLastTaskVoidByDeviceIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Od_Task_SetLastTaskVoidByDeviceIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Container_Vs_Items_InsertOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="one" type="tns:IV_container_vs_item" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IV_container_vs_item">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CONTAINERID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITEMSKU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITEMDESC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITEMBATCHNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITEMSTATUSNO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ITEMQTY" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OCC_QTY" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="WITHORDER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UPDATETIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UPDATEUSER" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VOID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EXPIREDAY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CVI_BACKUP1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CVI_BACKUP2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CVI_BACKUP3" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Container_Vs_Items_InsertOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Container_Vs_Items_InsertOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Container_Vs_Items_UpdateOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="one" type="tns:IV_container_vs_item" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Container_Vs_Items_UpdateOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Container_Vs_Items_UpdateOneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Container_Vs_Items_GetItemsByContainerID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="containerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfIV_container_vs_item">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IV_container_vs_item" nillable="true" type="tns:IV_container_vs_item" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Container_Vs_Items_GetItemsByContainerIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Container_Vs_Items_GetItemsByContainerIDResult" type="tns:ArrayOfIV_container_vs_item" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Container_Vs_Items_GetAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="Container_Vs_Items_GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Container_Vs_Items_GetAllResult" type="tns:ArrayOfIV_container_vs_item" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Container_Vs_Items_DeleteOneByContainerID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="containerId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Container_Vs_Items_DeleteOneByContainerIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Container_Vs_Items_DeleteOneByContainerIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Container_Vs_Items_DeleteOneByCI_ID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CI_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Container_Vs_Items_DeleteOneByCI_IDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Container_Vs_Items_DeleteOneByCI_IDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="V_INOUTSTOCK_SelectByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="startTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="V_INOUTSTOCK">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WAREHOUSENO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CONTAINERNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASKTYPE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SOURCEPLACE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TOPLACE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UPDATEUSER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UPDATETIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASKCONTENTSTRING" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfV_INOUTSTOCK">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="V_INOUTSTOCK" nillable="true" type="tns:V_INOUTSTOCK" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="V_INOUTSTOCK_SelectByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="V_INOUTSTOCK_SelectByDateResult" type="tns:ArrayOfV_INOUTSTOCK" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Query_Stored_GetAll">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="Query_Stored">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WAREHOUSENO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PLACEID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CONTAINERID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITEMSKU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITEMDESC" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ITEMQTY" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfQuery_Stored">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Query_Stored" nillable="true" type="tns:Query_Stored" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Query_Stored_GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Query_Stored_GetAllResult" type="tns:ArrayOfQuery_Stored" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CommonMethod_GetServerTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:CommonMethod_GetServerTime" />
+  </wsdl:message>
+  <wsdl:message name="CommonMethod_GetServerTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:CommonMethod_GetServerTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommonMethod_BackUpDBSoapIn">
+    <wsdl:part name="parameters" element="tns:CommonMethod_BackUpDB" />
+  </wsdl:message>
+  <wsdl:message name="CommonMethod_BackUpDBSoapOut">
+    <wsdl:part name="parameters" element="tns:CommonMethod_BackUpDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommonMethod_StringEncodingSoapIn">
+    <wsdl:part name="parameters" element="tns:CommonMethod_StringEncoding" />
+  </wsdl:message>
+  <wsdl:message name="CommonMethod_StringEncodingSoapOut">
+    <wsdl:part name="parameters" element="tns:CommonMethod_StringEncodingResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommonMethod_StringDecodingSoapIn">
+    <wsdl:part name="parameters" element="tns:CommonMethod_StringDecoding" />
+  </wsdl:message>
+  <wsdl:message name="CommonMethod_StringDecodingSoapOut">
+    <wsdl:part name="parameters" element="tns:CommonMethod_StringDecodingResponse" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_GetUserInfoByEmpnoSoapIn">
+    <wsdl:part name="parameters" element="tns:PW_User_GetUserInfoByEmpno" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_GetUserInfoByEmpnoSoapOut">
+    <wsdl:part name="parameters" element="tns:PW_User_GetUserInfoByEmpnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_UpdateUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:PW_User_UpdateUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_UpdateUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:PW_User_UpdateUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_DeleteUserSoapIn">
+    <wsdl:part name="parameters" element="tns:PW_User_DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_DeleteUserSoapOut">
+    <wsdl:part name="parameters" element="tns:PW_User_DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_DeleteUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:PW_User_DeleteUsers" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_DeleteUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:PW_User_DeleteUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:PW_User_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:PW_User_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="JsonPW_User_GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:JsonPW_User_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="JsonPW_User_GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:JsonPW_User_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_InsertOneSoapIn">
+    <wsdl:part name="parameters" element="tns:PW_User_InsertOne" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_InsertOneSoapOut">
+    <wsdl:part name="parameters" element="tns:PW_User_InsertOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_GetOneByUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:PW_User_GetOneByUserID" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_GetOneByUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:PW_User_GetOneByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_GetAllByUserGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:PW_User_GetAllByUserGroup" />
+  </wsdl:message>
+  <wsdl:message name="PW_User_GetAllByUserGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:PW_User_GetAllByUserGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="PW_Group_GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:PW_Group_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="PW_Group_GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:PW_Group_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="PW_Group_DeleteOneSoapIn">
+    <wsdl:part name="parameters" element="tns:PW_Group_DeleteOne" />
+  </wsdl:message>
+  <wsdl:message name="PW_Group_DeleteOneSoapOut">
+    <wsdl:part name="parameters" element="tns:PW_Group_DeleteOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="PW_Group_InsertOneSoapIn">
+    <wsdl:part name="parameters" element="tns:PW_Group_InsertOne" />
+  </wsdl:message>
+  <wsdl:message name="PW_Group_InsertOneSoapOut">
+    <wsdl:part name="parameters" element="tns:PW_Group_InsertOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="PW_Group_UpadteOneSoapIn">
+    <wsdl:part name="parameters" element="tns:PW_Group_UpadteOne" />
+  </wsdl:message>
+  <wsdl:message name="PW_Group_UpadteOneSoapOut">
+    <wsdl:part name="parameters" element="tns:PW_Group_UpadteOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:MODULE_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:MODULE_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_InsertOneSoapIn">
+    <wsdl:part name="parameters" element="tns:MODULE_InsertOne" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_InsertOneSoapOut">
+    <wsdl:part name="parameters" element="tns:MODULE_InsertOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_UpdateOneSoapIn">
+    <wsdl:part name="parameters" element="tns:MODULE_UpdateOne" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_UpdateOneSoapOut">
+    <wsdl:part name="parameters" element="tns:MODULE_UpdateOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_DeleteOneSoapIn">
+    <wsdl:part name="parameters" element="tns:MODULE_DeleteOne" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_DeleteOneSoapOut">
+    <wsdl:part name="parameters" element="tns:MODULE_DeleteOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_VS_GROUP_GetAllByGroupNameSoapIn">
+    <wsdl:part name="parameters" element="tns:MODULE_VS_GROUP_GetAllByGroupName" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_VS_GROUP_GetAllByGroupNameSoapOut">
+    <wsdl:part name="parameters" element="tns:MODULE_VS_GROUP_GetAllByGroupNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_VS_GROUP_InsertOneSoapIn">
+    <wsdl:part name="parameters" element="tns:MODULE_VS_GROUP_InsertOne" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_VS_GROUP_InsertOneSoapOut">
+    <wsdl:part name="parameters" element="tns:MODULE_VS_GROUP_InsertOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_VS_GROUP_UpdateOneSoapIn">
+    <wsdl:part name="parameters" element="tns:MODULE_VS_GROUP_UpdateOne" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_VS_GROUP_UpdateOneSoapOut">
+    <wsdl:part name="parameters" element="tns:MODULE_VS_GROUP_UpdateOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_VS_GROUP_DeleteOneSoapIn">
+    <wsdl:part name="parameters" element="tns:MODULE_VS_GROUP_DeleteOne" />
+  </wsdl:message>
+  <wsdl:message name="MODULE_VS_GROUP_DeleteOneSoapOut">
+    <wsdl:part name="parameters" element="tns:MODULE_VS_GROUP_DeleteOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM_Item_GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:IM_Item_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="IM_Item_GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:IM_Item_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM_Item_InsertOneSoapIn">
+    <wsdl:part name="parameters" element="tns:IM_Item_InsertOne" />
+  </wsdl:message>
+  <wsdl:message name="IM_Item_InsertOneSoapOut">
+    <wsdl:part name="parameters" element="tns:IM_Item_InsertOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM_Item_UpdateOneSoapIn">
+    <wsdl:part name="parameters" element="tns:IM_Item_UpdateOne" />
+  </wsdl:message>
+  <wsdl:message name="IM_Item_UpdateOneSoapOut">
+    <wsdl:part name="parameters" element="tns:IM_Item_UpdateOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM_Item_DeleteOneSoapIn">
+    <wsdl:part name="parameters" element="tns:IM_Item_DeleteOne" />
+  </wsdl:message>
+  <wsdl:message name="IM_Item_DeleteOneSoapOut">
+    <wsdl:part name="parameters" element="tns:IM_Item_DeleteOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM_Item_GetAllByContainerIDSoapIn">
+    <wsdl:part name="parameters" element="tns:IM_Item_GetAllByContainerID" />
+  </wsdl:message>
+  <wsdl:message name="IM_Item_GetAllByContainerIDSoapOut">
+    <wsdl:part name="parameters" element="tns:IM_Item_GetAllByContainerIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM_Item_GetOneBySkuSoapIn">
+    <wsdl:part name="parameters" element="tns:IM_Item_GetOneBySku" />
+  </wsdl:message>
+  <wsdl:message name="IM_Item_GetOneBySkuSoapOut">
+    <wsdl:part name="parameters" element="tns:IM_Item_GetOneBySkuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM_Item_GetAllByKeyWordSoapIn">
+    <wsdl:part name="parameters" element="tns:IM_Item_GetAllByKeyWord" />
+  </wsdl:message>
+  <wsdl:message name="IM_Item_GetAllByKeyWordSoapOut">
+    <wsdl:part name="parameters" element="tns:IM_Item_GetAllByKeyWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM_Container_GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:IM_Container_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="IM_Container_GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:IM_Container_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM_Container_GetUnBindingedContainerSoapIn">
+    <wsdl:part name="parameters" element="tns:IM_Container_GetUnBindingedContainer" />
+  </wsdl:message>
+  <wsdl:message name="IM_Container_GetUnBindingedContainerSoapOut">
+    <wsdl:part name="parameters" element="tns:IM_Container_GetUnBindingedContainerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM_Container_InsertOneSoapIn">
+    <wsdl:part name="parameters" element="tns:IM_Container_InsertOne" />
+  </wsdl:message>
+  <wsdl:message name="IM_Container_InsertOneSoapOut">
+    <wsdl:part name="parameters" element="tns:IM_Container_InsertOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM_Container_UpdateOneSoapIn">
+    <wsdl:part name="parameters" element="tns:IM_Container_UpdateOne" />
+  </wsdl:message>
+  <wsdl:message name="IM_Container_UpdateOneSoapOut">
+    <wsdl:part name="parameters" element="tns:IM_Container_UpdateOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM_Container_DeleteOneSoapIn">
+    <wsdl:part name="parameters" element="tns:IM_Container_DeleteOne" />
+  </wsdl:message>
+  <wsdl:message name="IM_Container_DeleteOneSoapOut">
+    <wsdl:part name="parameters" element="tns:IM_Container_DeleteOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM_Container_GetOneByContainerIdSoapIn">
+    <wsdl:part name="parameters" element="tns:IM_Container_GetOneByContainerId" />
+  </wsdl:message>
+  <wsdl:message name="IM_Container_GetOneByContainerIdSoapOut">
+    <wsdl:part name="parameters" element="tns:IM_Container_GetOneByContainerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM_Container_GetAllByKeyWordSoapIn">
+    <wsdl:part name="parameters" element="tns:IM_Container_GetAllByKeyWord" />
+  </wsdl:message>
+  <wsdl:message name="IM_Container_GetAllByKeyWordSoapOut">
+    <wsdl:part name="parameters" element="tns:IM_Container_GetAllByKeyWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetFreeByHighNOSoapIn">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetFreeByHighNO" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetFreeByHighNOSoapOut">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetFreeByHighNOResponse" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_InsertNewSoapIn">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_InsertNew" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_InsertNewSoapOut">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_InsertNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_UpdateNewSoapIn">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_UpdateNew" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_UpdateNewSoapOut">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_UpdateNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_DeleteOneSoapIn">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_DeleteOne" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_DeleteOneSoapOut">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_DeleteOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetPlaceInfoByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetPlaceInfoByID" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetPlaceInfoByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetPlaceInfoByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetInputLocationByContainerBindSoapIn">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetInputLocationByContainerBind" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetInputLocationByContainerBindSoapOut">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetInputLocationByContainerBindResponse" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetByAreaStrLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetByAreaStrLocation" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetByAreaStrLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetByAreaStrLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_FiltLocationByRowColumnLayerSoapIn">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_FiltLocationByRowColumnLayer" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_FiltLocationByRowColumnLayerSoapOut">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_FiltLocationByRowColumnLayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_CheckPlaceEmptySoapIn">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_CheckPlaceEmpty" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_CheckPlaceEmptySoapOut">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_CheckPlaceEmptyResponse" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_UpdateHadTaskDoingSoapIn">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_UpdateHadTaskDoing" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_UpdateHadTaskDoingSoapOut">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_UpdateHadTaskDoingResponse" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetEmptyPlaceSoapIn">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetEmptyPlace" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetEmptyPlaceSoapOut">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetEmptyPlaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetLockedPlaceSoapIn">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetLockedPlace" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetLockedPlaceSoapOut">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetLockedPlaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetPlaceByBindingContainerSoapIn">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetPlaceByBindingContainer" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetPlaceByBindingContainerSoapOut">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetPlaceByBindingContainerResponse" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetAllbyLayerSoapIn">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetAllbyLayer" />
+  </wsdl:message>
+  <wsdl:message name="PL_PLACE_GetAllbyLayerSoapOut">
+    <wsdl:part name="parameters" element="tns:PL_PLACE_GetAllbyLayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_GetAllByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:Device_Alert_GetAllByDate" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_GetAllByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:Device_Alert_GetAllByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_GetAllByAlertIdSoapIn">
+    <wsdl:part name="parameters" element="tns:Device_Alert_GetAllByAlertId" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_GetAllByAlertIdSoapOut">
+    <wsdl:part name="parameters" element="tns:Device_Alert_GetAllByAlertIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_InsertOneSoapIn">
+    <wsdl:part name="parameters" element="tns:Device_Alert_InsertOne" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_InsertOneSoapOut">
+    <wsdl:part name="parameters" element="tns:Device_Alert_InsertOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_UpdateOneSoapIn">
+    <wsdl:part name="parameters" element="tns:Device_Alert_UpdateOne" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_UpdateOneSoapOut">
+    <wsdl:part name="parameters" element="tns:Device_Alert_UpdateOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_DeleteOneSoapIn">
+    <wsdl:part name="parameters" element="tns:Device_Alert_DeleteOne" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_DeleteOneSoapOut">
+    <wsdl:part name="parameters" element="tns:Device_Alert_DeleteOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_UpdateOneFlagByAlarmIdSoapIn">
+    <wsdl:part name="parameters" element="tns:Device_Alert_UpdateOneFlagByAlarmId" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_UpdateOneFlagByAlarmIdSoapOut">
+    <wsdl:part name="parameters" element="tns:Device_Alert_UpdateOneFlagByAlarmIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_GetUnReadAlarmsSoapIn">
+    <wsdl:part name="parameters" element="tns:Device_Alert_GetUnReadAlarms" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_GetUnReadAlarmsSoapOut">
+    <wsdl:part name="parameters" element="tns:Device_Alert_GetUnReadAlarmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_GetLastAlarmSoapIn">
+    <wsdl:part name="parameters" element="tns:Device_Alert_GetLastAlarm" />
+  </wsdl:message>
+  <wsdl:message name="Device_Alert_GetLastAlarmSoapOut">
+    <wsdl:part name="parameters" element="tns:Device_Alert_GetLastAlarmResponse" />
+  </wsdl:message>
+  <wsdl:message name="Place_Vs_Container_GetStoredInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:Place_Vs_Container_GetStoredInfo" />
+  </wsdl:message>
+  <wsdl:message name="Place_Vs_Container_GetStoredInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:Place_Vs_Container_GetStoredInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Place_Vs_Container_GetEmptyContainerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:Place_Vs_Container_GetEmptyContainerInfo" />
+  </wsdl:message>
+  <wsdl:message name="Place_Vs_Container_GetEmptyContainerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:Place_Vs_Container_GetEmptyContainerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Place_Vs_Container_GetRelationshipByContainerSoapIn">
+    <wsdl:part name="parameters" element="tns:Place_Vs_Container_GetRelationshipByContainer" />
+  </wsdl:message>
+  <wsdl:message name="Place_Vs_Container_GetRelationshipByContainerSoapOut">
+    <wsdl:part name="parameters" element="tns:Place_Vs_Container_GetRelationshipByContainerResponse" />
+  </wsdl:message>
+  <wsdl:message name="Place_Vs_Container_GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:Place_Vs_Container_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="Place_Vs_Container_GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:Place_Vs_Container_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="Place_Vs_Container_UpdateOneSoapIn">
+    <wsdl:part name="parameters" element="tns:Place_Vs_Container_UpdateOne" />
+  </wsdl:message>
+  <wsdl:message name="Place_Vs_Container_UpdateOneSoapOut">
+    <wsdl:part name="parameters" element="tns:Place_Vs_Container_UpdateOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="Place_Vs_Container_InsertOneSoapIn">
+    <wsdl:part name="parameters" element="tns:Place_Vs_Container_InsertOne" />
+  </wsdl:message>
+  <wsdl:message name="Place_Vs_Container_InsertOneSoapOut">
+    <wsdl:part name="parameters" element="tns:Place_Vs_Container_InsertOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="Place_Vs_Container_DeleteOneSoapIn">
+    <wsdl:part name="parameters" element="tns:Place_Vs_Container_DeleteOne" />
+  </wsdl:message>
+  <wsdl:message name="Place_Vs_Container_DeleteOneSoapOut">
+    <wsdl:part name="parameters" element="tns:Place_Vs_Container_DeleteOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="OPC_ReadSoapIn">
+    <wsdl:part name="parameters" element="tns:OPC_Read" />
+  </wsdl:message>
+  <wsdl:message name="OPC_ReadSoapOut">
+    <wsdl:part name="parameters" element="tns:OPC_ReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="OPC_WritePointSoapIn">
+    <wsdl:part name="parameters" element="tns:OPC_WritePoint" />
+  </wsdl:message>
+  <wsdl:message name="OPC_WritePointSoapOut">
+    <wsdl:part name="parameters" element="tns:OPC_WritePointResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSJ_LicencesSoapIn">
+    <wsdl:part name="parameters" element="tns:SSJ_Licences" />
+  </wsdl:message>
+  <wsdl:message name="SSJ_LicencesSoapOut">
+    <wsdl:part name="parameters" element="tns:SSJ_LicencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="OPC_WriteSerialSoapIn">
+    <wsdl:part name="parameters" element="tns:OPC_WriteSerial" />
+  </wsdl:message>
+  <wsdl:message name="OPC_WriteSerialSoapOut">
+    <wsdl:part name="parameters" element="tns:OPC_WriteSerialResponse" />
+  </wsdl:message>
+  <wsdl:message name="DU_Device_GetOneByDeviceIdSoapIn">
+    <wsdl:part name="parameters" element="tns:DU_Device_GetOneByDeviceId" />
+  </wsdl:message>
+  <wsdl:message name="DU_Device_GetOneByDeviceIdSoapOut">
+    <wsdl:part name="parameters" element="tns:DU_Device_GetOneByDeviceIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="DU_Device_InsertOneSoapIn">
+    <wsdl:part name="parameters" element="tns:DU_Device_InsertOne" />
+  </wsdl:message>
+  <wsdl:message name="DU_Device_InsertOneSoapOut">
+    <wsdl:part name="parameters" element="tns:DU_Device_InsertOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="DU_Device_UpdateOneSoapIn">
+    <wsdl:part name="parameters" element="tns:DU_Device_UpdateOne" />
+  </wsdl:message>
+  <wsdl:message name="DU_Device_UpdateOneSoapOut">
+    <wsdl:part name="parameters" element="tns:DU_Device_UpdateOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="Od_Task_InsertOneSoapIn">
+    <wsdl:part name="parameters" element="tns:Od_Task_InsertOne" />
+  </wsdl:message>
+  <wsdl:message name="Od_Task_InsertOneSoapOut">
+    <wsdl:part name="parameters" element="tns:Od_Task_InsertOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="Od_Task_UpdateOneSoapIn">
+    <wsdl:part name="parameters" element="tns:Od_Task_UpdateOne" />
+  </wsdl:message>
+  <wsdl:message name="Od_Task_UpdateOneSoapOut">
+    <wsdl:part name="parameters" element="tns:Od_Task_UpdateOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="Od_Task_deleteOneSoapIn">
+    <wsdl:part name="parameters" element="tns:Od_Task_deleteOne" />
+  </wsdl:message>
+  <wsdl:message name="Od_Task_deleteOneSoapOut">
+    <wsdl:part name="parameters" element="tns:Od_Task_deleteOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="Od_Task_GetNotFinishedTask_by_deviceIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Od_Task_GetNotFinishedTask_by_deviceID" />
+  </wsdl:message>
+  <wsdl:message name="Od_Task_GetNotFinishedTask_by_deviceIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Od_Task_GetNotFinishedTask_by_deviceIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Od_Task_GetLastTaskByDeviceIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Od_Task_GetLastTaskByDeviceID" />
+  </wsdl:message>
+  <wsdl:message name="Od_Task_GetLastTaskByDeviceIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Od_Task_GetLastTaskByDeviceIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Od_Task_GetCurrentTaskByDeviceIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Od_Task_GetCurrentTaskByDeviceID" />
+  </wsdl:message>
+  <wsdl:message name="Od_Task_GetCurrentTaskByDeviceIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Od_Task_GetCurrentTaskByDeviceIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Od_Task_SetLastTaskVoidByDeviceIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Od_Task_SetLastTaskVoidByDeviceID" />
+  </wsdl:message>
+  <wsdl:message name="Od_Task_SetLastTaskVoidByDeviceIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Od_Task_SetLastTaskVoidByDeviceIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Container_Vs_Items_InsertOneSoapIn">
+    <wsdl:part name="parameters" element="tns:Container_Vs_Items_InsertOne" />
+  </wsdl:message>
+  <wsdl:message name="Container_Vs_Items_InsertOneSoapOut">
+    <wsdl:part name="parameters" element="tns:Container_Vs_Items_InsertOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="Container_Vs_Items_UpdateOneSoapIn">
+    <wsdl:part name="parameters" element="tns:Container_Vs_Items_UpdateOne" />
+  </wsdl:message>
+  <wsdl:message name="Container_Vs_Items_UpdateOneSoapOut">
+    <wsdl:part name="parameters" element="tns:Container_Vs_Items_UpdateOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="Container_Vs_Items_GetItemsByContainerIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Container_Vs_Items_GetItemsByContainerID" />
+  </wsdl:message>
+  <wsdl:message name="Container_Vs_Items_GetItemsByContainerIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Container_Vs_Items_GetItemsByContainerIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Container_Vs_Items_GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:Container_Vs_Items_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="Container_Vs_Items_GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:Container_Vs_Items_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="Container_Vs_Items_DeleteOneByContainerIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Container_Vs_Items_DeleteOneByContainerID" />
+  </wsdl:message>
+  <wsdl:message name="Container_Vs_Items_DeleteOneByContainerIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Container_Vs_Items_DeleteOneByContainerIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Container_Vs_Items_DeleteOneByCI_IDSoapIn">
+    <wsdl:part name="parameters" element="tns:Container_Vs_Items_DeleteOneByCI_ID" />
+  </wsdl:message>
+  <wsdl:message name="Container_Vs_Items_DeleteOneByCI_IDSoapOut">
+    <wsdl:part name="parameters" element="tns:Container_Vs_Items_DeleteOneByCI_IDResponse" />
+  </wsdl:message>
+  <wsdl:message name="V_INOUTSTOCK_SelectByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:V_INOUTSTOCK_SelectByDate" />
+  </wsdl:message>
+  <wsdl:message name="V_INOUTSTOCK_SelectByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:V_INOUTSTOCK_SelectByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Query_Stored_GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:Query_Stored_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="Query_Stored_GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:Query_Stored_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ASRS_ServiceSoap">
+    <wsdl:operation name="CommonMethod_GetServerTime">
+      <wsdl:input message="tns:CommonMethod_GetServerTimeSoapIn" />
+      <wsdl:output message="tns:CommonMethod_GetServerTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommonMethod_BackUpDB">
+      <wsdl:input message="tns:CommonMethod_BackUpDBSoapIn" />
+      <wsdl:output message="tns:CommonMethod_BackUpDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommonMethod_StringEncoding">
+      <wsdl:input message="tns:CommonMethod_StringEncodingSoapIn" />
+      <wsdl:output message="tns:CommonMethod_StringEncodingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommonMethod_StringDecoding">
+      <wsdl:input message="tns:CommonMethod_StringDecodingSoapIn" />
+      <wsdl:output message="tns:CommonMethod_StringDecodingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_GetUserInfoByEmpno">
+      <wsdl:input message="tns:PW_User_GetUserInfoByEmpnoSoapIn" />
+      <wsdl:output message="tns:PW_User_GetUserInfoByEmpnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_UpdateUserInfo">
+      <wsdl:input message="tns:PW_User_UpdateUserInfoSoapIn" />
+      <wsdl:output message="tns:PW_User_UpdateUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_DeleteUser">
+      <wsdl:input message="tns:PW_User_DeleteUserSoapIn" />
+      <wsdl:output message="tns:PW_User_DeleteUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_DeleteUsers">
+      <wsdl:input message="tns:PW_User_DeleteUsersSoapIn" />
+      <wsdl:output message="tns:PW_User_DeleteUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_GetAll">
+      <wsdl:input message="tns:PW_User_GetAllSoapIn" />
+      <wsdl:output message="tns:PW_User_GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JsonPW_User_GetAll">
+      <wsdl:input message="tns:JsonPW_User_GetAllSoapIn" />
+      <wsdl:output message="tns:JsonPW_User_GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_InsertOne">
+      <wsdl:input message="tns:PW_User_InsertOneSoapIn" />
+      <wsdl:output message="tns:PW_User_InsertOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_GetOneByUserID">
+      <wsdl:input message="tns:PW_User_GetOneByUserIDSoapIn" />
+      <wsdl:output message="tns:PW_User_GetOneByUserIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_GetAllByUserGroup">
+      <wsdl:input message="tns:PW_User_GetAllByUserGroupSoapIn" />
+      <wsdl:output message="tns:PW_User_GetAllByUserGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PW_Group_GetAll">
+      <wsdl:input message="tns:PW_Group_GetAllSoapIn" />
+      <wsdl:output message="tns:PW_Group_GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PW_Group_DeleteOne">
+      <wsdl:input message="tns:PW_Group_DeleteOneSoapIn" />
+      <wsdl:output message="tns:PW_Group_DeleteOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PW_Group_InsertOne">
+      <wsdl:input message="tns:PW_Group_InsertOneSoapIn" />
+      <wsdl:output message="tns:PW_Group_InsertOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PW_Group_UpadteOne">
+      <wsdl:input message="tns:PW_Group_UpadteOneSoapIn" />
+      <wsdl:output message="tns:PW_Group_UpadteOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_GetAll">
+      <wsdl:input message="tns:MODULE_GetAllSoapIn" />
+      <wsdl:output message="tns:MODULE_GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_InsertOne">
+      <wsdl:input message="tns:MODULE_InsertOneSoapIn" />
+      <wsdl:output message="tns:MODULE_InsertOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_UpdateOne">
+      <wsdl:input message="tns:MODULE_UpdateOneSoapIn" />
+      <wsdl:output message="tns:MODULE_UpdateOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_DeleteOne">
+      <wsdl:input message="tns:MODULE_DeleteOneSoapIn" />
+      <wsdl:output message="tns:MODULE_DeleteOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_VS_GROUP_GetAllByGroupName">
+      <wsdl:input message="tns:MODULE_VS_GROUP_GetAllByGroupNameSoapIn" />
+      <wsdl:output message="tns:MODULE_VS_GROUP_GetAllByGroupNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_VS_GROUP_InsertOne">
+      <wsdl:input message="tns:MODULE_VS_GROUP_InsertOneSoapIn" />
+      <wsdl:output message="tns:MODULE_VS_GROUP_InsertOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_VS_GROUP_UpdateOne">
+      <wsdl:input message="tns:MODULE_VS_GROUP_UpdateOneSoapIn" />
+      <wsdl:output message="tns:MODULE_VS_GROUP_UpdateOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_VS_GROUP_DeleteOne">
+      <wsdl:input message="tns:MODULE_VS_GROUP_DeleteOneSoapIn" />
+      <wsdl:output message="tns:MODULE_VS_GROUP_DeleteOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_GetAll">
+      <wsdl:input message="tns:IM_Item_GetAllSoapIn" />
+      <wsdl:output message="tns:IM_Item_GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_InsertOne">
+      <wsdl:input message="tns:IM_Item_InsertOneSoapIn" />
+      <wsdl:output message="tns:IM_Item_InsertOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_UpdateOne">
+      <wsdl:input message="tns:IM_Item_UpdateOneSoapIn" />
+      <wsdl:output message="tns:IM_Item_UpdateOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_DeleteOne">
+      <wsdl:input message="tns:IM_Item_DeleteOneSoapIn" />
+      <wsdl:output message="tns:IM_Item_DeleteOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_GetAllByContainerID">
+      <wsdl:input message="tns:IM_Item_GetAllByContainerIDSoapIn" />
+      <wsdl:output message="tns:IM_Item_GetAllByContainerIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_GetOneBySku">
+      <wsdl:input message="tns:IM_Item_GetOneBySkuSoapIn" />
+      <wsdl:output message="tns:IM_Item_GetOneBySkuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_GetAllByKeyWord">
+      <wsdl:input message="tns:IM_Item_GetAllByKeyWordSoapIn" />
+      <wsdl:output message="tns:IM_Item_GetAllByKeyWordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_GetAll">
+      <wsdl:input message="tns:IM_Container_GetAllSoapIn" />
+      <wsdl:output message="tns:IM_Container_GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_GetUnBindingedContainer">
+      <wsdl:input message="tns:IM_Container_GetUnBindingedContainerSoapIn" />
+      <wsdl:output message="tns:IM_Container_GetUnBindingedContainerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_InsertOne">
+      <wsdl:input message="tns:IM_Container_InsertOneSoapIn" />
+      <wsdl:output message="tns:IM_Container_InsertOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_UpdateOne">
+      <wsdl:input message="tns:IM_Container_UpdateOneSoapIn" />
+      <wsdl:output message="tns:IM_Container_UpdateOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_DeleteOne">
+      <wsdl:input message="tns:IM_Container_DeleteOneSoapIn" />
+      <wsdl:output message="tns:IM_Container_DeleteOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_GetOneByContainerId">
+      <wsdl:input message="tns:IM_Container_GetOneByContainerIdSoapIn" />
+      <wsdl:output message="tns:IM_Container_GetOneByContainerIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_GetAllByKeyWord">
+      <wsdl:input message="tns:IM_Container_GetAllByKeyWordSoapIn" />
+      <wsdl:output message="tns:IM_Container_GetAllByKeyWordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetAll">
+      <wsdl:input message="tns:PL_PLACE_GetAllSoapIn" />
+      <wsdl:output message="tns:PL_PLACE_GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetFreeByHighNO">
+      <wsdl:input message="tns:PL_PLACE_GetFreeByHighNOSoapIn" />
+      <wsdl:output message="tns:PL_PLACE_GetFreeByHighNOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_InsertNew">
+      <wsdl:input message="tns:PL_PLACE_InsertNewSoapIn" />
+      <wsdl:output message="tns:PL_PLACE_InsertNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_UpdateNew">
+      <wsdl:input message="tns:PL_PLACE_UpdateNewSoapIn" />
+      <wsdl:output message="tns:PL_PLACE_UpdateNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_DeleteOne">
+      <wsdl:input message="tns:PL_PLACE_DeleteOneSoapIn" />
+      <wsdl:output message="tns:PL_PLACE_DeleteOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetPlaceInfoByID">
+      <wsdl:input message="tns:PL_PLACE_GetPlaceInfoByIDSoapIn" />
+      <wsdl:output message="tns:PL_PLACE_GetPlaceInfoByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetInputLocationByContainerBind">
+      <wsdl:input message="tns:PL_PLACE_GetInputLocationByContainerBindSoapIn" />
+      <wsdl:output message="tns:PL_PLACE_GetInputLocationByContainerBindSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetByAreaStrLocation">
+      <wsdl:input message="tns:PL_PLACE_GetByAreaStrLocationSoapIn" />
+      <wsdl:output message="tns:PL_PLACE_GetByAreaStrLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_FiltLocationByRowColumnLayer">
+      <wsdl:input message="tns:PL_PLACE_FiltLocationByRowColumnLayerSoapIn" />
+      <wsdl:output message="tns:PL_PLACE_FiltLocationByRowColumnLayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_CheckPlaceEmpty">
+      <wsdl:input message="tns:PL_PLACE_CheckPlaceEmptySoapIn" />
+      <wsdl:output message="tns:PL_PLACE_CheckPlaceEmptySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_UpdateHadTaskDoing">
+      <wsdl:input message="tns:PL_PLACE_UpdateHadTaskDoingSoapIn" />
+      <wsdl:output message="tns:PL_PLACE_UpdateHadTaskDoingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetEmptyPlace">
+      <wsdl:input message="tns:PL_PLACE_GetEmptyPlaceSoapIn" />
+      <wsdl:output message="tns:PL_PLACE_GetEmptyPlaceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetLockedPlace">
+      <wsdl:input message="tns:PL_PLACE_GetLockedPlaceSoapIn" />
+      <wsdl:output message="tns:PL_PLACE_GetLockedPlaceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetPlaceByBindingContainer">
+      <wsdl:input message="tns:PL_PLACE_GetPlaceByBindingContainerSoapIn" />
+      <wsdl:output message="tns:PL_PLACE_GetPlaceByBindingContainerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetAllbyLayer">
+      <wsdl:input message="tns:PL_PLACE_GetAllbyLayerSoapIn" />
+      <wsdl:output message="tns:PL_PLACE_GetAllbyLayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_GetAllByDate">
+      <wsdl:input message="tns:Device_Alert_GetAllByDateSoapIn" />
+      <wsdl:output message="tns:Device_Alert_GetAllByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_GetAllByAlertId">
+      <wsdl:input message="tns:Device_Alert_GetAllByAlertIdSoapIn" />
+      <wsdl:output message="tns:Device_Alert_GetAllByAlertIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_InsertOne">
+      <wsdl:input message="tns:Device_Alert_InsertOneSoapIn" />
+      <wsdl:output message="tns:Device_Alert_InsertOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_UpdateOne">
+      <wsdl:input message="tns:Device_Alert_UpdateOneSoapIn" />
+      <wsdl:output message="tns:Device_Alert_UpdateOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_DeleteOne">
+      <wsdl:input message="tns:Device_Alert_DeleteOneSoapIn" />
+      <wsdl:output message="tns:Device_Alert_DeleteOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_UpdateOneFlagByAlarmId">
+      <wsdl:input message="tns:Device_Alert_UpdateOneFlagByAlarmIdSoapIn" />
+      <wsdl:output message="tns:Device_Alert_UpdateOneFlagByAlarmIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_GetUnReadAlarms">
+      <wsdl:input message="tns:Device_Alert_GetUnReadAlarmsSoapIn" />
+      <wsdl:output message="tns:Device_Alert_GetUnReadAlarmsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_GetLastAlarm">
+      <wsdl:input message="tns:Device_Alert_GetLastAlarmSoapIn" />
+      <wsdl:output message="tns:Device_Alert_GetLastAlarmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_GetStoredInfo">
+      <wsdl:input message="tns:Place_Vs_Container_GetStoredInfoSoapIn" />
+      <wsdl:output message="tns:Place_Vs_Container_GetStoredInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_GetEmptyContainerInfo">
+      <wsdl:input message="tns:Place_Vs_Container_GetEmptyContainerInfoSoapIn" />
+      <wsdl:output message="tns:Place_Vs_Container_GetEmptyContainerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_GetRelationshipByContainer">
+      <wsdl:input message="tns:Place_Vs_Container_GetRelationshipByContainerSoapIn" />
+      <wsdl:output message="tns:Place_Vs_Container_GetRelationshipByContainerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_GetAll">
+      <wsdl:input message="tns:Place_Vs_Container_GetAllSoapIn" />
+      <wsdl:output message="tns:Place_Vs_Container_GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_UpdateOne">
+      <wsdl:input message="tns:Place_Vs_Container_UpdateOneSoapIn" />
+      <wsdl:output message="tns:Place_Vs_Container_UpdateOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_InsertOne">
+      <wsdl:input message="tns:Place_Vs_Container_InsertOneSoapIn" />
+      <wsdl:output message="tns:Place_Vs_Container_InsertOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_DeleteOne">
+      <wsdl:input message="tns:Place_Vs_Container_DeleteOneSoapIn" />
+      <wsdl:output message="tns:Place_Vs_Container_DeleteOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OPC_Read">
+      <wsdl:input message="tns:OPC_ReadSoapIn" />
+      <wsdl:output message="tns:OPC_ReadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OPC_WritePoint">
+      <wsdl:input message="tns:OPC_WritePointSoapIn" />
+      <wsdl:output message="tns:OPC_WritePointSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSJ_Licences">
+      <wsdl:input message="tns:SSJ_LicencesSoapIn" />
+      <wsdl:output message="tns:SSJ_LicencesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OPC_WriteSerial">
+      <wsdl:input message="tns:OPC_WriteSerialSoapIn" />
+      <wsdl:output message="tns:OPC_WriteSerialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DU_Device_GetOneByDeviceId">
+      <wsdl:input message="tns:DU_Device_GetOneByDeviceIdSoapIn" />
+      <wsdl:output message="tns:DU_Device_GetOneByDeviceIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DU_Device_InsertOne">
+      <wsdl:input message="tns:DU_Device_InsertOneSoapIn" />
+      <wsdl:output message="tns:DU_Device_InsertOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DU_Device_UpdateOne">
+      <wsdl:input message="tns:DU_Device_UpdateOneSoapIn" />
+      <wsdl:output message="tns:DU_Device_UpdateOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_InsertOne">
+      <wsdl:input message="tns:Od_Task_InsertOneSoapIn" />
+      <wsdl:output message="tns:Od_Task_InsertOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_UpdateOne">
+      <wsdl:input message="tns:Od_Task_UpdateOneSoapIn" />
+      <wsdl:output message="tns:Od_Task_UpdateOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_deleteOne">
+      <wsdl:input message="tns:Od_Task_deleteOneSoapIn" />
+      <wsdl:output message="tns:Od_Task_deleteOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_GetNotFinishedTask_by_deviceID">
+      <wsdl:input message="tns:Od_Task_GetNotFinishedTask_by_deviceIDSoapIn" />
+      <wsdl:output message="tns:Od_Task_GetNotFinishedTask_by_deviceIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_GetLastTaskByDeviceID">
+      <wsdl:input message="tns:Od_Task_GetLastTaskByDeviceIDSoapIn" />
+      <wsdl:output message="tns:Od_Task_GetLastTaskByDeviceIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_GetCurrentTaskByDeviceID">
+      <wsdl:input message="tns:Od_Task_GetCurrentTaskByDeviceIDSoapIn" />
+      <wsdl:output message="tns:Od_Task_GetCurrentTaskByDeviceIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_SetLastTaskVoidByDeviceID">
+      <wsdl:input message="tns:Od_Task_SetLastTaskVoidByDeviceIDSoapIn" />
+      <wsdl:output message="tns:Od_Task_SetLastTaskVoidByDeviceIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_InsertOne">
+      <wsdl:input message="tns:Container_Vs_Items_InsertOneSoapIn" />
+      <wsdl:output message="tns:Container_Vs_Items_InsertOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_UpdateOne">
+      <wsdl:input message="tns:Container_Vs_Items_UpdateOneSoapIn" />
+      <wsdl:output message="tns:Container_Vs_Items_UpdateOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_GetItemsByContainerID">
+      <wsdl:input message="tns:Container_Vs_Items_GetItemsByContainerIDSoapIn" />
+      <wsdl:output message="tns:Container_Vs_Items_GetItemsByContainerIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_GetAll">
+      <wsdl:input message="tns:Container_Vs_Items_GetAllSoapIn" />
+      <wsdl:output message="tns:Container_Vs_Items_GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_DeleteOneByContainerID">
+      <wsdl:input message="tns:Container_Vs_Items_DeleteOneByContainerIDSoapIn" />
+      <wsdl:output message="tns:Container_Vs_Items_DeleteOneByContainerIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_DeleteOneByCI_ID">
+      <wsdl:input message="tns:Container_Vs_Items_DeleteOneByCI_IDSoapIn" />
+      <wsdl:output message="tns:Container_Vs_Items_DeleteOneByCI_IDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="V_INOUTSTOCK_SelectByDate">
+      <wsdl:input message="tns:V_INOUTSTOCK_SelectByDateSoapIn" />
+      <wsdl:output message="tns:V_INOUTSTOCK_SelectByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Query_Stored_GetAll">
+      <wsdl:input message="tns:Query_Stored_GetAllSoapIn" />
+      <wsdl:output message="tns:Query_Stored_GetAllSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ASRS_ServiceSoap" type="tns:ASRS_ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CommonMethod_GetServerTime">
+      <soap:operation soapAction="http://tempuri.org/CommonMethod_GetServerTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommonMethod_BackUpDB">
+      <soap:operation soapAction="http://tempuri.org/CommonMethod_BackUpDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommonMethod_StringEncoding">
+      <soap:operation soapAction="http://tempuri.org/CommonMethod_StringEncoding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommonMethod_StringDecoding">
+      <soap:operation soapAction="http://tempuri.org/CommonMethod_StringDecoding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_GetUserInfoByEmpno">
+      <soap:operation soapAction="http://tempuri.org/PW_User_GetUserInfoByEmpno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_UpdateUserInfo">
+      <soap:operation soapAction="http://tempuri.org/PW_User_UpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/PW_User_DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_DeleteUsers">
+      <soap:operation soapAction="http://tempuri.org/PW_User_DeleteUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_GetAll">
+      <soap:operation soapAction="http://tempuri.org/PW_User_GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JsonPW_User_GetAll">
+      <soap:operation soapAction="http://tempuri.org/JsonPW_User_GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_InsertOne">
+      <soap:operation soapAction="http://tempuri.org/PW_User_InsertOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_GetOneByUserID">
+      <soap:operation soapAction="http://tempuri.org/PW_User_GetOneByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_GetAllByUserGroup">
+      <soap:operation soapAction="http://tempuri.org/PW_User_GetAllByUserGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_Group_GetAll">
+      <soap:operation soapAction="http://tempuri.org/PW_Group_GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_Group_DeleteOne">
+      <soap:operation soapAction="http://tempuri.org/PW_Group_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_Group_InsertOne">
+      <soap:operation soapAction="http://tempuri.org/PW_Group_InsertOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_Group_UpadteOne">
+      <soap:operation soapAction="http://tempuri.org/PW_Group_UpadteOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_GetAll">
+      <soap:operation soapAction="http://tempuri.org/MODULE_GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_InsertOne">
+      <soap:operation soapAction="http://tempuri.org/MODULE_InsertOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_UpdateOne">
+      <soap:operation soapAction="http://tempuri.org/MODULE_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_DeleteOne">
+      <soap:operation soapAction="http://tempuri.org/MODULE_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_VS_GROUP_GetAllByGroupName">
+      <soap:operation soapAction="http://tempuri.org/MODULE_VS_GROUP_GetAllByGroupName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_VS_GROUP_InsertOne">
+      <soap:operation soapAction="http://tempuri.org/MODULE_VS_GROUP_InsertOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_VS_GROUP_UpdateOne">
+      <soap:operation soapAction="http://tempuri.org/MODULE_VS_GROUP_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_VS_GROUP_DeleteOne">
+      <soap:operation soapAction="http://tempuri.org/MODULE_VS_GROUP_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_GetAll">
+      <soap:operation soapAction="http://tempuri.org/IM_Item_GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_InsertOne">
+      <soap:operation soapAction="http://tempuri.org/IM_Item_InsertOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_UpdateOne">
+      <soap:operation soapAction="http://tempuri.org/IM_Item_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_DeleteOne">
+      <soap:operation soapAction="http://tempuri.org/IM_Item_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_GetAllByContainerID">
+      <soap:operation soapAction="http://tempuri.org/IM_Item_GetAllByContainerID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_GetOneBySku">
+      <soap:operation soapAction="http://tempuri.org/IM_Item_GetOneBySku" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_GetAllByKeyWord">
+      <soap:operation soapAction="http://tempuri.org/IM_Item_GetAllByKeyWord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_GetAll">
+      <soap:operation soapAction="http://tempuri.org/IM_Container_GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_GetUnBindingedContainer">
+      <soap:operation soapAction="http://tempuri.org/IM_Container_GetUnBindingedContainer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_InsertOne">
+      <soap:operation soapAction="http://tempuri.org/IM_Container_InsertOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_UpdateOne">
+      <soap:operation soapAction="http://tempuri.org/IM_Container_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_DeleteOne">
+      <soap:operation soapAction="http://tempuri.org/IM_Container_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_GetOneByContainerId">
+      <soap:operation soapAction="http://tempuri.org/IM_Container_GetOneByContainerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_GetAllByKeyWord">
+      <soap:operation soapAction="http://tempuri.org/IM_Container_GetAllByKeyWord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetAll">
+      <soap:operation soapAction="http://tempuri.org/PL_PLACE_GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetFreeByHighNO">
+      <soap:operation soapAction="http://tempuri.org/PL_PLACE_GetFreeByHighNO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_InsertNew">
+      <soap:operation soapAction="http://tempuri.org/PL_PLACE_InsertNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_UpdateNew">
+      <soap:operation soapAction="http://tempuri.org/PL_PLACE_UpdateNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_DeleteOne">
+      <soap:operation soapAction="http://tempuri.org/PL_PLACE_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetPlaceInfoByID">
+      <soap:operation soapAction="http://tempuri.org/PL_PLACE_GetPlaceInfoByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetInputLocationByContainerBind">
+      <soap:operation soapAction="http://tempuri.org/PL_PLACE_GetInputLocationByContainerBind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetByAreaStrLocation">
+      <soap:operation soapAction="http://tempuri.org/PL_PLACE_GetByAreaStrLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_FiltLocationByRowColumnLayer">
+      <soap:operation soapAction="http://tempuri.org/PL_PLACE_FiltLocationByRowColumnLayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_CheckPlaceEmpty">
+      <soap:operation soapAction="http://tempuri.org/PL_PLACE_CheckPlaceEmpty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_UpdateHadTaskDoing">
+      <soap:operation soapAction="http://tempuri.org/PL_PLACE_UpdateHadTaskDoing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetEmptyPlace">
+      <soap:operation soapAction="http://tempuri.org/PL_PLACE_GetEmptyPlace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetLockedPlace">
+      <soap:operation soapAction="http://tempuri.org/PL_PLACE_GetLockedPlace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetPlaceByBindingContainer">
+      <soap:operation soapAction="http://tempuri.org/PL_PLACE_GetPlaceByBindingContainer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetAllbyLayer">
+      <soap:operation soapAction="http://tempuri.org/PL_PLACE_GetAllbyLayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_GetAllByDate">
+      <soap:operation soapAction="http://tempuri.org/Device_Alert_GetAllByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_GetAllByAlertId">
+      <soap:operation soapAction="http://tempuri.org/Device_Alert_GetAllByAlertId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_InsertOne">
+      <soap:operation soapAction="http://tempuri.org/Device_Alert_InsertOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_UpdateOne">
+      <soap:operation soapAction="http://tempuri.org/Device_Alert_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_DeleteOne">
+      <soap:operation soapAction="http://tempuri.org/Device_Alert_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_UpdateOneFlagByAlarmId">
+      <soap:operation soapAction="http://tempuri.org/Device_Alert_UpdateOneFlagByAlarmId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_GetUnReadAlarms">
+      <soap:operation soapAction="http://tempuri.org/Device_Alert_GetUnReadAlarms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_GetLastAlarm">
+      <soap:operation soapAction="http://tempuri.org/Device_Alert_GetLastAlarm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_GetStoredInfo">
+      <soap:operation soapAction="http://tempuri.org/Place_Vs_Container_GetStoredInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_GetEmptyContainerInfo">
+      <soap:operation soapAction="http://tempuri.org/Place_Vs_Container_GetEmptyContainerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_GetRelationshipByContainer">
+      <soap:operation soapAction="http://tempuri.org/Place_Vs_Container_GetRelationshipByContainer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_GetAll">
+      <soap:operation soapAction="http://tempuri.org/Place_Vs_Container_GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_UpdateOne">
+      <soap:operation soapAction="http://tempuri.org/Place_Vs_Container_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_InsertOne">
+      <soap:operation soapAction="http://tempuri.org/Place_Vs_Container_InsertOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_DeleteOne">
+      <soap:operation soapAction="http://tempuri.org/Place_Vs_Container_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OPC_Read">
+      <soap:operation soapAction="http://tempuri.org/OPC_Read" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OPC_WritePoint">
+      <soap:operation soapAction="http://tempuri.org/OPC_WritePoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSJ_Licences">
+      <soap:operation soapAction="http://tempuri.org/SSJ_Licences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OPC_WriteSerial">
+      <soap:operation soapAction="http://tempuri.org/OPC_WriteSerial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DU_Device_GetOneByDeviceId">
+      <soap:operation soapAction="http://tempuri.org/DU_Device_GetOneByDeviceId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DU_Device_InsertOne">
+      <soap:operation soapAction="http://tempuri.org/DU_Device_InsertOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DU_Device_UpdateOne">
+      <soap:operation soapAction="http://tempuri.org/DU_Device_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_InsertOne">
+      <soap:operation soapAction="http://tempuri.org/Od_Task_InsertOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_UpdateOne">
+      <soap:operation soapAction="http://tempuri.org/Od_Task_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_deleteOne">
+      <soap:operation soapAction="http://tempuri.org/Od_Task_deleteOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_GetNotFinishedTask_by_deviceID">
+      <soap:operation soapAction="http://tempuri.org/Od_Task_GetNotFinishedTask_by_deviceID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_GetLastTaskByDeviceID">
+      <soap:operation soapAction="http://tempuri.org/Od_Task_GetLastTaskByDeviceID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_GetCurrentTaskByDeviceID">
+      <soap:operation soapAction="http://tempuri.org/Od_Task_GetCurrentTaskByDeviceID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_SetLastTaskVoidByDeviceID">
+      <soap:operation soapAction="http://tempuri.org/Od_Task_SetLastTaskVoidByDeviceID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_InsertOne">
+      <soap:operation soapAction="http://tempuri.org/Container_Vs_Items_InsertOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_UpdateOne">
+      <soap:operation soapAction="http://tempuri.org/Container_Vs_Items_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_GetItemsByContainerID">
+      <soap:operation soapAction="http://tempuri.org/Container_Vs_Items_GetItemsByContainerID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_GetAll">
+      <soap:operation soapAction="http://tempuri.org/Container_Vs_Items_GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_DeleteOneByContainerID">
+      <soap:operation soapAction="http://tempuri.org/Container_Vs_Items_DeleteOneByContainerID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_DeleteOneByCI_ID">
+      <soap:operation soapAction="http://tempuri.org/Container_Vs_Items_DeleteOneByCI_ID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="V_INOUTSTOCK_SelectByDate">
+      <soap:operation soapAction="http://tempuri.org/V_INOUTSTOCK_SelectByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Query_Stored_GetAll">
+      <soap:operation soapAction="http://tempuri.org/Query_Stored_GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ASRS_ServiceSoap12" type="tns:ASRS_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CommonMethod_GetServerTime">
+      <soap12:operation soapAction="http://tempuri.org/CommonMethod_GetServerTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommonMethod_BackUpDB">
+      <soap12:operation soapAction="http://tempuri.org/CommonMethod_BackUpDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommonMethod_StringEncoding">
+      <soap12:operation soapAction="http://tempuri.org/CommonMethod_StringEncoding" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommonMethod_StringDecoding">
+      <soap12:operation soapAction="http://tempuri.org/CommonMethod_StringDecoding" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_GetUserInfoByEmpno">
+      <soap12:operation soapAction="http://tempuri.org/PW_User_GetUserInfoByEmpno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_UpdateUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/PW_User_UpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_DeleteUser">
+      <soap12:operation soapAction="http://tempuri.org/PW_User_DeleteUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_DeleteUsers">
+      <soap12:operation soapAction="http://tempuri.org/PW_User_DeleteUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/PW_User_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JsonPW_User_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/JsonPW_User_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_InsertOne">
+      <soap12:operation soapAction="http://tempuri.org/PW_User_InsertOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_GetOneByUserID">
+      <soap12:operation soapAction="http://tempuri.org/PW_User_GetOneByUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_User_GetAllByUserGroup">
+      <soap12:operation soapAction="http://tempuri.org/PW_User_GetAllByUserGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_Group_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/PW_Group_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_Group_DeleteOne">
+      <soap12:operation soapAction="http://tempuri.org/PW_Group_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_Group_InsertOne">
+      <soap12:operation soapAction="http://tempuri.org/PW_Group_InsertOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PW_Group_UpadteOne">
+      <soap12:operation soapAction="http://tempuri.org/PW_Group_UpadteOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/MODULE_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_InsertOne">
+      <soap12:operation soapAction="http://tempuri.org/MODULE_InsertOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_UpdateOne">
+      <soap12:operation soapAction="http://tempuri.org/MODULE_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_DeleteOne">
+      <soap12:operation soapAction="http://tempuri.org/MODULE_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_VS_GROUP_GetAllByGroupName">
+      <soap12:operation soapAction="http://tempuri.org/MODULE_VS_GROUP_GetAllByGroupName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_VS_GROUP_InsertOne">
+      <soap12:operation soapAction="http://tempuri.org/MODULE_VS_GROUP_InsertOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_VS_GROUP_UpdateOne">
+      <soap12:operation soapAction="http://tempuri.org/MODULE_VS_GROUP_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MODULE_VS_GROUP_DeleteOne">
+      <soap12:operation soapAction="http://tempuri.org/MODULE_VS_GROUP_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/IM_Item_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_InsertOne">
+      <soap12:operation soapAction="http://tempuri.org/IM_Item_InsertOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_UpdateOne">
+      <soap12:operation soapAction="http://tempuri.org/IM_Item_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_DeleteOne">
+      <soap12:operation soapAction="http://tempuri.org/IM_Item_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_GetAllByContainerID">
+      <soap12:operation soapAction="http://tempuri.org/IM_Item_GetAllByContainerID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_GetOneBySku">
+      <soap12:operation soapAction="http://tempuri.org/IM_Item_GetOneBySku" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Item_GetAllByKeyWord">
+      <soap12:operation soapAction="http://tempuri.org/IM_Item_GetAllByKeyWord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/IM_Container_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_GetUnBindingedContainer">
+      <soap12:operation soapAction="http://tempuri.org/IM_Container_GetUnBindingedContainer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_InsertOne">
+      <soap12:operation soapAction="http://tempuri.org/IM_Container_InsertOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_UpdateOne">
+      <soap12:operation soapAction="http://tempuri.org/IM_Container_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_DeleteOne">
+      <soap12:operation soapAction="http://tempuri.org/IM_Container_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_GetOneByContainerId">
+      <soap12:operation soapAction="http://tempuri.org/IM_Container_GetOneByContainerId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IM_Container_GetAllByKeyWord">
+      <soap12:operation soapAction="http://tempuri.org/IM_Container_GetAllByKeyWord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/PL_PLACE_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetFreeByHighNO">
+      <soap12:operation soapAction="http://tempuri.org/PL_PLACE_GetFreeByHighNO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_InsertNew">
+      <soap12:operation soapAction="http://tempuri.org/PL_PLACE_InsertNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_UpdateNew">
+      <soap12:operation soapAction="http://tempuri.org/PL_PLACE_UpdateNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_DeleteOne">
+      <soap12:operation soapAction="http://tempuri.org/PL_PLACE_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetPlaceInfoByID">
+      <soap12:operation soapAction="http://tempuri.org/PL_PLACE_GetPlaceInfoByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetInputLocationByContainerBind">
+      <soap12:operation soapAction="http://tempuri.org/PL_PLACE_GetInputLocationByContainerBind" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetByAreaStrLocation">
+      <soap12:operation soapAction="http://tempuri.org/PL_PLACE_GetByAreaStrLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_FiltLocationByRowColumnLayer">
+      <soap12:operation soapAction="http://tempuri.org/PL_PLACE_FiltLocationByRowColumnLayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_CheckPlaceEmpty">
+      <soap12:operation soapAction="http://tempuri.org/PL_PLACE_CheckPlaceEmpty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_UpdateHadTaskDoing">
+      <soap12:operation soapAction="http://tempuri.org/PL_PLACE_UpdateHadTaskDoing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetEmptyPlace">
+      <soap12:operation soapAction="http://tempuri.org/PL_PLACE_GetEmptyPlace" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetLockedPlace">
+      <soap12:operation soapAction="http://tempuri.org/PL_PLACE_GetLockedPlace" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetPlaceByBindingContainer">
+      <soap12:operation soapAction="http://tempuri.org/PL_PLACE_GetPlaceByBindingContainer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PL_PLACE_GetAllbyLayer">
+      <soap12:operation soapAction="http://tempuri.org/PL_PLACE_GetAllbyLayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_GetAllByDate">
+      <soap12:operation soapAction="http://tempuri.org/Device_Alert_GetAllByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_GetAllByAlertId">
+      <soap12:operation soapAction="http://tempuri.org/Device_Alert_GetAllByAlertId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_InsertOne">
+      <soap12:operation soapAction="http://tempuri.org/Device_Alert_InsertOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_UpdateOne">
+      <soap12:operation soapAction="http://tempuri.org/Device_Alert_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_DeleteOne">
+      <soap12:operation soapAction="http://tempuri.org/Device_Alert_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_UpdateOneFlagByAlarmId">
+      <soap12:operation soapAction="http://tempuri.org/Device_Alert_UpdateOneFlagByAlarmId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_GetUnReadAlarms">
+      <soap12:operation soapAction="http://tempuri.org/Device_Alert_GetUnReadAlarms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Device_Alert_GetLastAlarm">
+      <soap12:operation soapAction="http://tempuri.org/Device_Alert_GetLastAlarm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_GetStoredInfo">
+      <soap12:operation soapAction="http://tempuri.org/Place_Vs_Container_GetStoredInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_GetEmptyContainerInfo">
+      <soap12:operation soapAction="http://tempuri.org/Place_Vs_Container_GetEmptyContainerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_GetRelationshipByContainer">
+      <soap12:operation soapAction="http://tempuri.org/Place_Vs_Container_GetRelationshipByContainer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/Place_Vs_Container_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_UpdateOne">
+      <soap12:operation soapAction="http://tempuri.org/Place_Vs_Container_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_InsertOne">
+      <soap12:operation soapAction="http://tempuri.org/Place_Vs_Container_InsertOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Place_Vs_Container_DeleteOne">
+      <soap12:operation soapAction="http://tempuri.org/Place_Vs_Container_DeleteOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OPC_Read">
+      <soap12:operation soapAction="http://tempuri.org/OPC_Read" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OPC_WritePoint">
+      <soap12:operation soapAction="http://tempuri.org/OPC_WritePoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSJ_Licences">
+      <soap12:operation soapAction="http://tempuri.org/SSJ_Licences" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OPC_WriteSerial">
+      <soap12:operation soapAction="http://tempuri.org/OPC_WriteSerial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DU_Device_GetOneByDeviceId">
+      <soap12:operation soapAction="http://tempuri.org/DU_Device_GetOneByDeviceId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DU_Device_InsertOne">
+      <soap12:operation soapAction="http://tempuri.org/DU_Device_InsertOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DU_Device_UpdateOne">
+      <soap12:operation soapAction="http://tempuri.org/DU_Device_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_InsertOne">
+      <soap12:operation soapAction="http://tempuri.org/Od_Task_InsertOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_UpdateOne">
+      <soap12:operation soapAction="http://tempuri.org/Od_Task_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_deleteOne">
+      <soap12:operation soapAction="http://tempuri.org/Od_Task_deleteOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_GetNotFinishedTask_by_deviceID">
+      <soap12:operation soapAction="http://tempuri.org/Od_Task_GetNotFinishedTask_by_deviceID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_GetLastTaskByDeviceID">
+      <soap12:operation soapAction="http://tempuri.org/Od_Task_GetLastTaskByDeviceID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_GetCurrentTaskByDeviceID">
+      <soap12:operation soapAction="http://tempuri.org/Od_Task_GetCurrentTaskByDeviceID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Od_Task_SetLastTaskVoidByDeviceID">
+      <soap12:operation soapAction="http://tempuri.org/Od_Task_SetLastTaskVoidByDeviceID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_InsertOne">
+      <soap12:operation soapAction="http://tempuri.org/Container_Vs_Items_InsertOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_UpdateOne">
+      <soap12:operation soapAction="http://tempuri.org/Container_Vs_Items_UpdateOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_GetItemsByContainerID">
+      <soap12:operation soapAction="http://tempuri.org/Container_Vs_Items_GetItemsByContainerID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/Container_Vs_Items_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_DeleteOneByContainerID">
+      <soap12:operation soapAction="http://tempuri.org/Container_Vs_Items_DeleteOneByContainerID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Container_Vs_Items_DeleteOneByCI_ID">
+      <soap12:operation soapAction="http://tempuri.org/Container_Vs_Items_DeleteOneByCI_ID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="V_INOUTSTOCK_SelectByDate">
+      <soap12:operation soapAction="http://tempuri.org/V_INOUTSTOCK_SelectByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Query_Stored_GetAll">
+      <soap12:operation soapAction="http://tempuri.org/Query_Stored_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ASRS_Service">
+    <wsdl:port name="ASRS_ServiceSoap" binding="tns:ASRS_ServiceSoap">
+      <soap:address location="http://localhost/WebServiceForVolvo/ASRS_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ASRS_ServiceSoap12" binding="tns:ASRS_ServiceSoap12">
+      <soap12:address location="http://localhost/WebServiceForVolvo/ASRS_Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

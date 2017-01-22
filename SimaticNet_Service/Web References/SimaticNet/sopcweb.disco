@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://localhost/OPC.Simatic.NET/sopcweb.asmx?wsdl" docRef="http://localhost/OPC.Simatic.NET/sopcweb.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://localhost/OPC.Simatic.NET/sopcweb.asmx" xmlns:q1="http://opcfoundation.org/webservices/XMLDA/1.0/" binding="q1:OPCXML_DataAccessSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://localhost/OPC.Simatic.NET/sopcweb.asmx" xmlns:q2="http://opcfoundation.org/webservices/XMLDA/1.0/" binding="q2:OPCXML_DataAccessSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
