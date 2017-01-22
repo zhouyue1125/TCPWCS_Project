@@ -61,3 +61,12 @@ E:\项目\惊天豪迈\JTHM\VisualSrm\obj\Debug\Test.Properties.Resources.resour
 E:\项目\惊天豪迈\JTHM\VisualSrm\obj\Debug\VirsualSrm.csproj.GenerateResource.Cache
 E:\项目\惊天豪迈\JTHM\VisualSrm\obj\Debug\Test.exe
 E:\项目\惊天豪迈\JTHM\VisualSrm\obj\Debug\Test.pdb
+D:\code\githubCode\TCPWCS_Project\VisualSrm\bin\Debug\Test.exe.config
+D:\code\githubCode\TCPWCS_Project\VisualSrm\bin\Debug\Test.exe
+D:\code\githubCode\TCPWCS_Project\VisualSrm\bin\Debug\Test.pdb
+D:\code\githubCode\TCPWCS_Project\VisualSrm\obj\Debug\VirsualSrm.csprojResolveAssemblyReference.cache
+D:\code\githubCode\TCPWCS_Project\VisualSrm\obj\Debug\Test.FrmVisualSRM.resources
+D:\code\githubCode\TCPWCS_Project\VisualSrm\obj\Debug\Test.Properties.Resources.resources
+D:\code\githubCode\TCPWCS_Project\VisualSrm\obj\Debug\VirsualSrm.csproj.GenerateResource.Cache
+D:\code\githubCode\TCPWCS_Project\VisualSrm\obj\Debug\Test.exe
+D:\code\githubCode\TCPWCS_Project\VisualSrm\obj\Debug\Test.pdb

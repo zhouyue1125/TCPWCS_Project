@@ -37,3 +37,8 @@ E:\项目\惊天豪迈\JTHM\DBEntity\bin\Debug\DBEntity.dll
 E:\项目\惊天豪迈\JTHM\DBEntity\bin\Debug\DBEntity.pdb
 E:\项目\惊天豪迈\JTHM\DBEntity\obj\Debug\DBEntity.dll
 E:\项目\惊天豪迈\JTHM\DBEntity\obj\Debug\DBEntity.pdb
+D:\code\githubCode\TCPWCS_Project\DBEntity\bin\Debug\DBEntity.dll
+D:\code\githubCode\TCPWCS_Project\DBEntity\bin\Debug\DBEntity.pdb
+D:\code\githubCode\TCPWCS_Project\DBEntity\obj\Debug\DBEntity.csprojResolveAssemblyReference.cache
+D:\code\githubCode\TCPWCS_Project\DBEntity\obj\Debug\DBEntity.dll
+D:\code\githubCode\TCPWCS_Project\DBEntity\obj\Debug\DBEntity.pdb

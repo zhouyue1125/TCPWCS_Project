@@ -46,3 +46,9 @@ E:\项目\惊天豪迈\JTHM\Stacker\bin\Debug\Stacker.pdb
 E:\项目\惊天豪迈\JTHM\Stacker\obj\Debug\Stacker.csprojResolveAssemblyReference.cache
 E:\项目\惊天豪迈\JTHM\Stacker\obj\Debug\Stacker.dll
 E:\项目\惊天豪迈\JTHM\Stacker\obj\Debug\Stacker.pdb
+D:\code\githubCode\TCPWCS_Project\Stacker\bin\Debug\Stacker.dll.config
+D:\code\githubCode\TCPWCS_Project\Stacker\bin\Debug\Stacker.dll
+D:\code\githubCode\TCPWCS_Project\Stacker\bin\Debug\Stacker.pdb
+D:\code\githubCode\TCPWCS_Project\Stacker\obj\Debug\Stacker.csprojResolveAssemblyReference.cache
+D:\code\githubCode\TCPWCS_Project\Stacker\obj\Debug\Stacker.dll
+D:\code\githubCode\TCPWCS_Project\Stacker\obj\Debug\Stacker.pdb

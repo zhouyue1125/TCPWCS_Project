@@ -149,3 +149,15 @@ E:\项目\惊天豪迈\JTHM\ASRS_Volvo\bin\Debug\WCS_V3.pdb
 E:\项目\惊天豪迈\JTHM\TCPWCS_Project\ASRS_Volvo\bin\Debug\WCS_V3.exe.config
 E:\项目\惊天豪迈\JTHM\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.exe
 E:\项目\惊天豪迈\JTHM\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.pdb
+D:\code\githubCode\TCPWCS_Project\ASRS_Volvo\bin\Debug\WCS_V3.exe.config
+D:\code\githubCode\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.exe
+D:\code\githubCode\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.pdb
+D:\code\githubCode\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.csprojResolveAssemblyReference.cache
+D:\code\githubCode\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.FakeSrm.resources
+D:\code\githubCode\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.FormMain.resources
+D:\code\githubCode\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.FormSt.resources
+D:\code\githubCode\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.FormWCS_LoginIn.resources
+D:\code\githubCode\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.Properties.Resources.resources
+D:\code\githubCode\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.csproj.GenerateResource.Cache
+D:\code\githubCode\TCPWCS_Project\ASRS_Volvo\bin\Debug\WCS_V3.exe
+D:\code\githubCode\TCPWCS_Project\ASRS_Volvo\bin\Debug\WCS_V3.pdb

@@ -133,3 +133,13 @@ E:\项目\惊天豪迈\JTHM\WebServiceForASRS\bin\DBEntity.pdb
 E:\项目\惊天豪迈\JTHM\WebServiceForASRS\obj\Debug\WebServiceForASRS.csprojResolveAssemblyReference.cache
 E:\项目\惊天豪迈\JTHM\WebServiceForASRS\obj\Debug\WebServiceForASRS.dll
 E:\项目\惊天豪迈\JTHM\WebServiceForASRS\obj\Debug\WebServiceForASRS.pdb
+D:\code\githubCode\TCPWCS_Project\WebServiceForASRS\bin\WebServiceForASRS.dll.config
+D:\code\githubCode\TCPWCS_Project\WebServiceForASRS\bin\WebServiceForASRS.dll
+D:\code\githubCode\TCPWCS_Project\WebServiceForASRS\bin\WebServiceForASRS.pdb
+D:\code\githubCode\TCPWCS_Project\WebServiceForASRS\bin\DBEntity.dll
+D:\code\githubCode\TCPWCS_Project\WebServiceForASRS\bin\office.dll
+D:\code\githubCode\TCPWCS_Project\WebServiceForASRS\bin\Microsoft.Vbe.Interop.dll
+D:\code\githubCode\TCPWCS_Project\WebServiceForASRS\bin\DBEntity.pdb
+D:\code\githubCode\TCPWCS_Project\WebServiceForASRS\obj\Debug\WebServiceForASRS.csprojResolveAssemblyReference.cache
+D:\code\githubCode\TCPWCS_Project\WebServiceForASRS\obj\Debug\WebServiceForASRS.dll
+D:\code\githubCode\TCPWCS_Project\WebServiceForASRS\obj\Debug\WebServiceForASRS.pdb

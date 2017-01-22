@@ -50,6 +50,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnTaskFinish = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -275,16 +276,25 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(62)))), ((int)(((byte)(38)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(411, 49);
+            this.label1.Size = new System.Drawing.Size(565, 49);
             this.label1.TabIndex = 24;
             this.label1.Text = "虚拟堆垛机";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(415, 40);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(138, 142);
+            this.richTextBox1.TabIndex = 25;
+            this.richTextBox1.Text = "";
             // 
             // FakeSrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 535);
+            this.ClientSize = new System.Drawing.Size(565, 535);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Alert);
             this.Controls.Add(this.comboBox1);
@@ -327,6 +337,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnTaskFinish;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
 
     }
 }
