@@ -120,6 +120,7 @@
             this.btnSend.TabIndex = 17;
             this.btnSend.Text = "条码发送";
             this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // lsBRunning
             // 
@@ -299,6 +300,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion

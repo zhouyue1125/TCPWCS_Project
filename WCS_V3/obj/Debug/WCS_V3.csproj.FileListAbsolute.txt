@@ -146,3 +146,6 @@ E:\项目\惊天豪迈\JTHM\WCS_V3\obj\Debug\WCS_V3.Properties.Resources.resourc
 E:\项目\惊天豪迈\JTHM\WCS_V3\obj\Debug\WCS_V3.csproj.GenerateResource.Cache
 E:\项目\惊天豪迈\JTHM\ASRS_Volvo\bin\Debug\WCS_V3.exe
 E:\项目\惊天豪迈\JTHM\ASRS_Volvo\bin\Debug\WCS_V3.pdb
+E:\项目\惊天豪迈\JTHM\TCPWCS_Project\ASRS_Volvo\bin\Debug\WCS_V3.exe.config
+E:\项目\惊天豪迈\JTHM\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.exe
+E:\项目\惊天豪迈\JTHM\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.pdb

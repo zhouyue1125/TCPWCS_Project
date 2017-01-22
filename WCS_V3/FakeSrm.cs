@@ -306,5 +306,10 @@ namespace WCS_V3
                 trHandShake.Abort();
             }
         }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("111");
+        }
     }
 }
