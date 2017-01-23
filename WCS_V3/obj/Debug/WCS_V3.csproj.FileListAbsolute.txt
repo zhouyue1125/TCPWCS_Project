@@ -161,3 +161,6 @@ D:\code\githubCode\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.Properties.Resources.r
 D:\code\githubCode\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.csproj.GenerateResource.Cache
 D:\code\githubCode\TCPWCS_Project\ASRS_Volvo\bin\Debug\WCS_V3.exe
 D:\code\githubCode\TCPWCS_Project\ASRS_Volvo\bin\Debug\WCS_V3.pdb
+E:\gitCode\TCPWCS_Project\ASRS_Volvo\bin\Debug\WCS_V3.exe.config
+E:\gitCode\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.exe
+E:\gitCode\TCPWCS_Project\WCS_V3\obj\Debug\WCS_V3.pdb

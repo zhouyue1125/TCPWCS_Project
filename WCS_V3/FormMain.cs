@@ -1786,7 +1786,7 @@ namespace WCS_V3
                     srv.DU_Device_UpdateOne(srm);
                     ChangeButtonEnable(true);
                 }
-                lbReceive.Text = Encoding.Default.GetString(bytes);
+                //lbReceive.Text = Encoding.Default.GetString(bytes);
             }));
             return HandleResult.Ok;
         }
